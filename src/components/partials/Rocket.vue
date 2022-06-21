@@ -6,19 +6,17 @@
       <div class="fin fin-right"></div>
       <div class="window"></div>
     </div>
-    <div class="exhaust-flame"></div>
+<!--    TODO: implement animation when rocket is clicked -> remove exhaust fumes and swap exhaust-flame with flame-wrapper-->
+<!--    <div class="exhaust-flame"></div>-->
+    <div class="flame-wrapper">
+      <div class="flame red"></div>
+      <div class="flame orange"></div>
+      <div class="flame gold"></div>
+      <div class="flame white"></div>
+    </div>
     <ul class="exhaust-fumes">
       <li></li>
       <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <ul class="star">
       <li></li>
       <li></li>
       <li></li>
@@ -107,6 +105,18 @@ $darkred: #a75248;
   left: calc(50% - 14px);
   animation: exhaust 0.2s infinite;
 }
+
+.exhaust-fire {
+  position: absolute;
+  top: 90%;
+  width: 28px;
+  background-color: #ff4e00;
+  background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+  height:150px;
+  left: calc(50% - 14px);
+  animation: exhaust 0.2s infinite;
+}
+
 .exhaust-fumes li {
   width: 60px;
   height: 60px;
@@ -177,78 +187,6 @@ $darkred: #a75248;
 }
 }
 
-.star li {
-  list-style: none;
-  position: absolute;
-&:before,
-&:after {
-   content: '';
-   position: absolute;
-   background-color: $white;
- }
-&:before {
-   width: 10px;
-   height: 2px;
-   border-radius: 50%;
- }
-&:after {
-   height: 8px;
-   width: 2px;
-   left: 4px;
-   top: -3px;
- }
-&:first-child {
-   top: -30px;
-   left: -210px;
-   animation: twinkle 0.4s infinite;
- }
-&:nth-child(2) {
-   top: 0;
-   left: 60px;
-   animation: twinkle 0.5s infinite;
-&:before {
-   height: 1px;
-   width: 5px;
- }
-&:after {
-   width: 1px;
-   height: 5px;
-   top: -2px;
-   left: 2px;
- }
-}
-&:nth-child(3) {
-   left: 120px;
-   top: 220px;
-   animation: twinkle 1s infinite;
- }
-&:nth-child(4) {
-   left: -100px;
-   top: 200px;
-   animation: twinkle 0.5s ease infinite;
- }
-&:nth-child(5) {
-   left: 170px;
-   top: 100px;
-   animation: twinkle 0.4s ease infinite;
- }
-&:nth-child(6) {
-   top: 87px;
-   left: -79px;
-   animation: twinkle 0.2s infinite;
-&:before {
-   height: 1px;
-   width: 5px;
- }
-&:after {
-   width: 1px;
-   height: 5px;
-   top: -2px;
-   left: 2px;
- }
-}
-}
-
 @keyframes fumes {
   50% {
     transform: scale(1.5);
@@ -298,6 +236,72 @@ $darkred: #a75248;
     transform: scale(1.1);
     opacity: 0.7;
   }
+}
+
+.red {
+  width: 80px;
+  height: 80px;
+  background: orangered;
+  box-shadow: 0px 0px 10px 5px orangered;
+}
+.orange {
+  left:10px;
+  width: 60px;
+  height: 60px;
+  background: orange;
+  box-shadow: 0px 0px 12px 6px orange;
+}
+.gold {
+  left:18px;
+  width: 45px;
+  height: 45px;
+  background: gold;
+  box-shadow: 0px 0px 9px 4px gold;
+}
+.white {
+  left:22px;
+  width: 35px;
+  height: 35px;
+  background: lightyellow;
+  box-shadow: 0px 0px 9px 4px lightyellow;
+}
+.blue {
+  left:32px;
+  width: 15px;
+  height: 15px;
+  background: darkblue;
+  box-shadow: 0px 0px 15px 10px darkblue;
+}
+.black {
+  left:20px;
+  width: 40px;
+  height: 40px;
+  bottom:-50px;
+  background: black;
+  box-shadow: 0px 0px 15px 10px black;
+}
+.base {
+  border-radius: 50%;
+  position: absolute;
+}
+.flame-wrapper {
+  position: relative;
+  animation: flicker 3ms ease-in infinite;
+}
+.flame {
+  bottom: 0;
+  position: absolute;
+  border-radius: 50% 0% 50% 50%;
+  transform:rotate(135deg);
+  top: 3px;
+}
+@keyframes flicker {
+  0% {transform: rotate(-1deg);}
+  20% {transform: rotate(2deg) scaleY(1.05);}
+  40% {transform: rotate(-1deg);}
+  60% {transform: rotate(1deg);}
+  80% {transform: rotate(-1deg) scaleY(0.90);}
+  100% {transform: rotate(1deg);}
 }
 </style>
 <script>

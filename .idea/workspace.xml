@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f9e6258-751d-4d98-b5cc-96ea785b6991" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/partials/Rocket.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/partials/Rocket.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,7 @@
       <updated>1655822233205</updated>
       <workItem from="1655822234397" duration="2017000" />
       <workItem from="1655839469672" duration="381000" />
-      <workItem from="1655839869176" duration="5929000" />
+      <workItem from="1655839869176" duration="6686000" />
     </task>
     <servers />
   </component>
